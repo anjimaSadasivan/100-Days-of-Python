@@ -120,7 +120,40 @@ def findNum(a, num):
         return -1
     
 
-print(findNum(a = [1,2,3,4,5], num = 10))
+# print(findNum(a = [1,2,3,4,5], num = 10))
+
+
+############### DAY 03 ######################################
+# Problem Statement: Given an integer array nums, rotate the array to the left by one.
+# Note: There is no need to return anything, just modify the given array.
+# Examples
+# Example 1:  
+# Input: nums = [1, 2, 3, 4, 5]  
+# Output: [2, 3, 4, 5, 1]  
+# Explanation: Initially, nums = [1, 2, 3, 4, 5]  
+# Rotating once to the left results in nums = [2, 3, 4, 5, 1].
+
+# Example 2:  
+# Input: nums = [-1, 0, 3, 6]  
+# Output: [0, 3, 6, -1]  
+# Explanation: Initially, nums = [-1, 0, 3, 6]  
+# Rotating once to the left results in nums = [0, 3, 6, -1].
+
+
+def rotateArrayone(a):
+    b = a[:]
+    c = b.pop(0)
+    b.append(c)
+    return b
+# print(rotateArray([-1, 0, 3, 6]))
+
+def rotateArray(a):
+    if len(a) == 0:
+        return a
+    else:
+        return a[1:] + [a[0]]
+print(rotateArray([-1, 0, 3, 6]))
+
 
             
 
