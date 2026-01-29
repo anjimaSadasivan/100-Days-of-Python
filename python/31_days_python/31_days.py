@@ -69,7 +69,92 @@ def ifSorted(a):
                 return False
             else:
                 return True
-print(ifSorted([10, 2, 0, 3 ]))
+# print(ifSorted([10, 2, 0, 3 ]))
 
+############################## DAY 2 ############################
+# Problem Statement: Given an array, find the second smallest and second largest element in the array. Print ‘-1’ in the event that either of them doesn’t exist.
+# Examples
+# Example 1:  
+# Input: [1, 2, 4, 7, 7, 5]  
+# Output:  
+# Second Smallest : 2  
+# Second Largest : 5  
+# Explanation:  The elements are sorted as 1, 2, 4, 5, 7, 7.  
+# Hence, the second smallest element is 2, and the second largest element is 5.
+
+# Example 2:  
+# Input: [1]  
+# Output:  
+# Second Smallest : -1  
+# Second Largest : -1  
+# Explanation:  Since there is only one element in the array, it is both the largest and smallest element.  
+# Therefore, there is no second smallest or second largest element present.
+
+
+def secondSM(a):
+    b = sorted(set(a))
+    return b[1] , b[-2]
+        
+
+# print(secondSM([1, 2, 4, 7, 7, 5]))
+
+
+#qn2
+# Problem Statement: Given an array, and an element num the task is to find if num is present in the given array or not. If present print the index of the element or print -1.
+# Examples
+# Example 1:  
+# Input: arr[] = 1 2 3 4 5, num = 3  
+# Output: 2  `
+# Explanation: 3 is present at the 2nd index of the array.
+
+# Example 2:  
+# Input: arr[] = 5 4 3 2 1, num = 5  
+# Output: 0  
+# Explanation: 5 is present at the 0th index of the array.
+
+def findNum(a, num):
+    for i in range(0, len(a)):
+        if a[i] == num:
+            return i
+    else:
+        return -1
+    
+
+# print(findNum(a = [1,2,3,4,5], num = 10))
+
+
+############### DAY 03 ######################################
+# Problem Statement: Given an integer array nums, rotate the array to the left by one.
+# Note: There is no need to return anything, just modify the given array.
+# Examples
+# Example 1:  
+# Input: nums = [1, 2, 3, 4, 5]  
+# Output: [2, 3, 4, 5, 1]  
+# Explanation: Initially, nums = [1, 2, 3, 4, 5]  
+# Rotating once to the left results in nums = [2, 3, 4, 5, 1].
+
+# Example 2:  
+# Input: nums = [-1, 0, 3, 6]  
+# Output: [0, 3, 6, -1]  
+# Explanation: Initially, nums = [-1, 0, 3, 6]  
+# Rotating once to the left results in nums = [0, 3, 6, -1].
+
+
+def rotateArrayone(a):
+    b = a[:]
+    c = b.pop(0)
+    b.append(c)
+    return b
+# print(rotateArray([-1, 0, 3, 6]))
+
+def rotateArray(a):
+    if len(a) == 0:
+        return a
+    else:
+        return a[1:] + [a[0]]
+print(rotateArray([-1, 0, 3, 6]))
+
+
+            
 
 
